@@ -49,6 +49,6 @@ class Utilites {
   }
 
   static convertWindSpeed(speed) {
-    return (speed).toFixed(1);
+    return (speed * 2.236936).toFixed(1);
   }
 }

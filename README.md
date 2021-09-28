@@ -1,0 +1,1 @@
+This is an app which gets and displays a the weather using OpenWeather's API.

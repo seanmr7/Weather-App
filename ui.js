@@ -10,6 +10,7 @@ class UI {
     this.dewpoint = document.getElementById('w-dewpoint');
     this.feelsLike = document.getElementById('w-feels-like');
     this.wind = document.getElementById('w-wind');
+    this.changeLocation = document.getElementById('w-change-btn');
   }
 
   displayWeather(weatherData, city, state) {
@@ -25,7 +26,7 @@ class UI {
     this.currentTemp.innerText = `${Utilites.convertToFahrenheit(main.temp)} F (${Utilites.convertToCelsius(main.temp)} C)`
     this.icon.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
     this.humidity.innerText = `Relative Humidity: ${main.humidity}%`;
-    this.dewpoint.innerText = `Dewpoint: ${Utilites.calculateDewpoint(main.temp, main.humidity)*9/5+32} F (${Utilites.calculateDewpoint(main.temp, main.humidity)} C)`;
+    this.dewpoint.innerText = `Dewpoint: ${(Utilites.calculateDewpoint(main.temp, main.humidity)*9/5+32).toFixed(1)} F (${Utilites.calculateDewpoint(main.temp, main.humidity)} C)`;
     this.feelsLike.innerText = `Feels Like: ${Utilites.convertToFahrenheit(main.feels_like)} F (${Utilites.convertToCelsius(main.feels_like)} C)`;
     this.wind.innerText = `Wind from the ${Utilites.windDirection(wind.deg)} at ${Utilites.convertWindSpeed(wind.speed)} MPH`
   }
