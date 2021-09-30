@@ -1,13 +1,24 @@
-class localStorage {
-  constructor() {
-     
+class LocalStorage {
+  static getLocation() {
+    let location;
+    if(localStorage.getItem('location') === null) {
+      location = {
+        city: "Alexandria",
+        state: "VA"
+      };
+    } else {
+      location = JSON.parse(localStorage.getItem('location'));
+    }
+
+    return location;
   }
 
-  getLocation() {
+  static changeLocation(city, state) {
+    const location = {
+      city: city,
+      state: state
+    };
 
-  }
-
-  setLocation() {
-    
+    localStorage.setItem('location', JSON.stringify(location));
   }
 }
