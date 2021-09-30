@@ -1,4 +1,5 @@
 class LocalStorage {
+  // Get location from local storage
   static getLocation() {
     let location;
     if(localStorage.getItem('location') === null) {
@@ -13,6 +14,7 @@ class LocalStorage {
     return location;
   }
 
+  // Change location in local storage
   static changeLocation(city, state) {
     const location = {
       city: city,
