@@ -1,6 +1,6 @@
 class Weather {
   constructor() {
-    this.id = '[API key]';
+    this.id = '7bac3d9d1b6e1b4d1436d6ab482979bc';
   }
 
   // Get weather data from Open Weather API
